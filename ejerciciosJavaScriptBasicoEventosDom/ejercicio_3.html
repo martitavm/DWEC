@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+
+</head>
+<body>
+    <form>
+        <input id="precio" type="number">
+        <input id="cantidad" type="number">
+        <input onclick="calculadora()" type="button" id="enviar" value="Calcular">
+        <input id="total" readonly>
+    </form>
+    <script>
+    function calculadora(){
+    const primerInput = document.getElementById("precio").value;
+    const segundoInput = document.getElementById("cantidad").value;
+    let totalInput = document.getElementById("total");
+    totalInput.value = primerInput * segundoInput;
+
+}
+        </script>
+</body>
+</html>

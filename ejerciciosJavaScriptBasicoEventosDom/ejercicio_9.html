@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9</title>
+    <style>
+       
+        #boton {
+            position: fixed;
+            bottom: 1em; 
+            right: 1em;
+            display: none;
+            padding: 1em;
+            background-color: #ff00c8;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        body {
+            height: 200vh;
+        }
+    </style>
+</head>
+<body>
+
+    <p>Primera linea o cabecera</p>
+    <div id="boton">Botón fijo</div>
+
+    <script>
+        let boton = document.getElementById("boton");
+
+        window.addEventListener("scroll", function() {
+            // Si el desplazamiento vertical es mayor que 0 muestra el botón
+            if (window.scrollY > 0) {
+                boton.style.display = "block"; 
+            } else {
+                boton.style.display = "none";
+            }
+        });
+    </script>
+
+</body>
+</html>

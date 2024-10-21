@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+
+    <style>
+        div{ width: 100px; height:100px;}
+    </style>
+
+</head>
+<body>
+<div id="c1" style="background: red"></div>
+<div id="c2" style="background: white"></div>
+<div id="c3" style="background: blue"></div>
+
+</body>
+<script>
+    
+    let bloqueRojo = document.getElementById("c1");
+    let bloqueCentral = document.getElementById("c2");
+    let bloqueAzul = document.getElementById("c3");
+
+    
+    bloqueCentral.addEventListener("mouseenter", function(event) {
+       
+        let origen = event.relatedTarget;
+        
+        if (origen && origen.id === "c1") {
+            
+            bloqueCentral.style.background = "red";
+        } else if (origen && origen.id === "c3") {
+        
+            bloqueCentral.style.background = "blue";
+        } else {
+       
+            bloqueCentral.style.background = "white";
+        }
+    });
+       
+
+</script>
+</html>

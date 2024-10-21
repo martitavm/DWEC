@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10</title>
+</head>
+<body>
+
+<form>
+    <label for="letras">No se aceptan dígitos</label>
+    <input type="text" id="letras">
+</form>
+
+<script>
+    let input = document.getElementById("letras");
+
+    input.addEventListener("keydown", function(event) {
+        // Con esta variable almacenamos la tecla pulsada por el usuario
+        let tecla = event.key;
+
+        // Vemos si la tecla pulsada está en el rango de 0-9
+        if (tecla >= "0" && tecla <= "9") {
+            event.preventDefault(); /* Con el método preventDefault() podemos hacer que el 
+            navegador no inserte el valor en el campo de texto si es un número.*/
+        }
+    });
+</script>
+
+</body>
+</html>
