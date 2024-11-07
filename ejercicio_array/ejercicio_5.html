@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+    </head>
+    <body>
+        <h1>Ejercicio 5</h1>
+        <p>Mira la consola</p>
+    </body>
+    <script>
+    function min(array, valor) {
+
+    let min_valor = array[0];
+    let min_indice = 0;
+
+    if(valor == 'v'){
+
+    for (let i = 1; i < array.length; i++) {
+        if (array[i] < min_valor) {
+            min_valor = array[i];
+            min_indice = i;
+        }
+    }
+
+        return min_valor;
+
+    }else if (valor == 'i') {
+        return min_indice;
+    } else {
+        alert("Introduce un valor válido (v o i)")
+}
+
+}
+
+console.log(min([4, 5, 7], 'v'));
+console.log(min([4, 5, 7], 'i'));
+console.log(min([4, 5, 7], 'f'));
+
+</script>
+</html>

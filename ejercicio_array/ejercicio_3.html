@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+    </head>
+    <body>
+        <h1>Ejercicio 3</h1>
+        <p>Mira la consola</p>
+    </body>
+    <script>
+         function sumaLista(array) {
+        let suma = 0;
+        for (let i = 0; i < array.length; i++) {
+            suma += array[i];
+        }
+        return suma;
+    }
+
+    let array_suma = [1,3, 6, 7];
+    let suma_total = sumaLista(array_suma);
+    console.log("La suma total es: " + suma_total);
+
+   </script>
+</html>

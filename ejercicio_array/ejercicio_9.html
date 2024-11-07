@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9</title>
+    </head>
+    <body>
+        <h1>Ejercicio 9</h1>
+        <p>Mira la consola</p>
+    </body>
+    <script>
+
+const turnos_servicio = [
+    ["Lunes", "María"],
+    ["Martes", "Luis"],
+    ["Miércoles", "Antonia"],
+    ["Jueves", "Pedro"],
+    ["Viernes", "Marisa"]
+];
+
+function servicio(dia) {
+    let existe_dia = false;
+    dia = dia.toLowerCase();
+
+    for (let i = 0; i < turnos_servicio.length; i++) {
+        if (turnos_servicio[i][0].toLowerCase() == dia) {
+            existe_dia = true;
+            indice = i;
+    }
+}
+
+    if (existe_dia){
+        console.log("Este día se encarga " + turnos_servicio[indice][1]);
+    
+    }else{
+            console.log("No hay servicio ese día.");
+        }
+    
+    
+}
+
+console.log(servicio("Jueves"));     
+
+</script>
+</html>

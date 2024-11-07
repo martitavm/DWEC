@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10</title>
+    </head>
+    <body>
+        <h1>Ejercicio 10</h1>
+        <p>Mira la consola</p>
+    </body>
+    <script>
+
+const productos = [
+    ["Monitor", 200],
+    ["Teclado", 75],
+    ["Ratón", 30],
+    ["Altavoces", 100],
+    ["Cascos", 60]
+];
+
+function precio(nombre) {
+    let existe_producto = false;
+    nombre = nombre.toLowerCase();
+    for (let i = 0; i < productos.length; i++) {
+        if (productos[i][0].toLowerCase() === nombre) {
+            existe_producto = true;
+            indice = i;
+
+    }
+}
+
+    if (existe_producto){
+        console.log(productos[indice][0] + ": " + productos[indice][1] + "€");
+    
+    }else{
+            console.log("No existe ese producto.");
+        }
+    
+
+}
+
+console.log(precio("teclado"));  
+
+</script>
+</html>

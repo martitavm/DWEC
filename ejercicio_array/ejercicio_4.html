@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+    </head>
+    <body>
+        <h1>Ejercicio 4</h1>
+        <p>Mira la consola</p>
+    </body>
+    <script>
+
+    let array_numeros = [];
+    let num = 1;
+    let cont = 0;
+    while (num != 0 && !(isNaN(num))){
+        num = Number(prompt("Introduce un número (si introduces 0 terminas de añadir datos)"))
+        if(num != 0 && !(isNaN(num)))
+            array_numeros[cont] = num;
+        cont++;
+    }
+
+    let cont_par = 0;
+    let cont_impar = 0;
+
+    for (let i = 0; i < array_numeros.length; i++){
+        if(array_numeros[i] % 2 == 0){
+            cont_par++;
+        }else
+            cont_impar++;
+    }
+
+    console.log("El array de entrada es " + array_numeros + " y hay " + cont_par + " pares y " + cont_impar + " impares.");
+
+   </script>
+</html>

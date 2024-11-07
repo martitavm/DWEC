@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+    </head>
+    <body>
+        <h1>Ejercicio 7</h1>
+        <p>Mira la consola</p>
+    </body>
+    <script>
+
+        function esVocal(letra){
+            let array_vocales = ["a", "A", "e", "E", "i", "I", "o", "O", "u", "U"];
+            let variable_booleana = false;
+            for (let i = 0; i < array_vocales.length; i++) {
+                if(array_vocales[i] == letra){
+                    variable_booleana =  true;
+                    break;
+
+                }else {
+                    variable_booleana =  false;
+                }
+            }
+            return variable_booleana;
+
+        }
+
+console.log(esVocal("E"));
+
+</script>
+</html>
