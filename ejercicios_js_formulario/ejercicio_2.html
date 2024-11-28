@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Cádiz</title>
+    <link rel="stylesheet" href="styles_2.css">
+</head>
+<body>
+    <form id="form-registro" action="grabar.php" method="POST">
+        <p>
+            <label for="nombre-usuario">Nombre de usuario:</label>
+            <input type="text" id="nombre-usuario" name="nombre-usuario" placeholder="Nombre de usuario" required>
+            <span id="error-nombre-usuario" class="error"></span>
+        </p>
+        <p>
+            <label for="contraseña">Contraseña:</label>
+            <input type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required>
+            <span id="error-contraseña" class="error"></span>
+        </p>
+        <p>
+            <label for="poblacion">Población:</label>
+            <select id="poblacion" name="poblacion" required>
+                <option value="">- Seleccione -</option>
+                <option value="Algeciras">Algeciras</option>
+                <option value="Barbate">Barbate</option>
+                <option value="Cádiz">Cádiz</option>
+                <option value="Chiclana">Chiclana</option>
+                <option value="Jerez">Jerez</option>
+                <option value="La Línea">La Línea</option>
+                <option value="Puerto Real">Puerto Real</option>
+                <option value="San Fernando">San Fernando</option>
+                <option value="Sanlúcar">Sanlúcar</option>
+                <option value="Tarifa">Tarifa</option>
+            </select>
+            <span id="error-poblacion" class="error"></span>
+        </p>
+        <button type="submit">Registrar</button>
+    </form>
+    <script src="formulario_2.js"></script>
+</body>
+</html>
