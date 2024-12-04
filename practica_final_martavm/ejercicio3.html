@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+    <script src="ejercicio3.js"></script>
+</head>
+<body>
+    <h1>Cifrado César</h1>
+    <h2>- Descifrar -</h2>
+        <p>
+            <label for="alfabeto">Alfabeto</label>
+            <select id="alfabeto" name="alfabeto" onchange="rotar()" required>  <!-- Ejecutamos la función rotar() cuando el usuario seleccione un idioma.-->
+                <option value="Castellano">Castellano</option>
+                <option value="Ingles">Inglés</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="textoCifrar">Texto a descifrar</label>
+            <textarea id="textoCifrar" name="textoCifrar" required></textarea>
+        </p>
+
+        <p>
+            <label for="nivelRotado">Nivel de Rotado</label>
+            <input type="number" id="nivelRotado" name="nivelRotado" required>
+        </p>
+
+        <h2 id="textoDescifrado"></h2>
+    
+        <button type="submit" onclick="descifrar()">Descifrar</button>  <!-- Ejecutamos la función descifrar() cuando el usuario presione el botón Descifrar.-->
+
+</body>
+</html>
