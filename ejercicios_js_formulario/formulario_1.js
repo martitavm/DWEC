@@ -1,5 +1,5 @@
-document.addEventListener("DOMContentLoaded", function(){
-    const form = document.getElementById("form-crear-cuenta");
+document.addEventListener("DOMContentLoaded", function(){ //Esta función se ejecutará cuando se cargue todo el contenido del documeto.
+    const form = document.getElementById("form-crear-cuenta"); //Accedemos a los elementos del html para poder usarlos posteriormente.
     const nombre = document.getElementById("nombre");
     const correo = document.getElementById("correo");
     const contraseña = document.getElementById("contraseña");
@@ -18,15 +18,16 @@ document.addEventListener("DOMContentLoaded", function(){
     campoOperacion.textContent += ` ${num1} + ${num2} = ?`;
   
     // Validamos los campos individualmente
+    //Esta función valida si el campo nombre no está vacío.
     const validarNombre = function() {
-      if (!nombre.value.trim()) {
+      if (!nombre.value.trim()) { //Utilizamos la función trim() para asegurarnos que no hay espacios en el nombre.
         alert("El nombre no puede estar vacío.");
-        nombre.focus();
+        nombre.focus(); //Usamos focus() para poner el cursor dentro del campo nombre. (Hacemos lo mismo en las demás validaciones)
         return false;
       }
       return true;
     };
-  
+    //Esta función valida si el campo correo es válido según nuestra expresión regular mostrada a continuación.
     const validarCorreo = function() {
       const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!regex.test(correo.value)) {
@@ -36,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function(){
       }
       return true;
     };
-  
+    //Esta función valida si el campo contraseña es válido.
     const validarContraseña = function() {
       if (contraseña.value.length < 8 || !/\d/.test(contraseña.value)) {
         alert("La contraseña debe tener al menos 8 caracteres y un dígito.");
@@ -45,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function(){
       }
       return true;
     };
-  
+    //Esta función valida si el campo confirmarContraseña es válido teniendo en cuenta si el campo contraseña y el campo confirmar contraseña tienen el mismo valor.
     const validarConfirmarContraseña = function() {
       if (contraseña.value !== confirmarContraseña.value) {
         alert("Las contraseñas no coinciden.");
@@ -54,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function(){
       }
       return true;
     };
-  
+    //Esta función valida si el campo operación está resuelto correctamente.
     const validarOperacion = function() {
       if (parseInt(operacion.value) !== suma) {
         alert("La respuesta a la operación matemática es incorrecta.");
@@ -74,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function(){
   
     // Validar el formulario completo al enviarlo
     form.addEventListener("submit", function(e) {
-      e.preventDefault();
+      e.preventDefault(); // La función preventDefault() nos permite hacer las validaciones antes de que se envie el formulario, ya que si no la usásemos se enviaría sin comprobar nada.
       if (
         validarNombre() &&
         validarCorreo() &&
