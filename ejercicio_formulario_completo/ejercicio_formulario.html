@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Completo</title>
+</head>
+<body>
+        <h1>Formulario de Contacto</h1>
+        <form name="miFormulario" id="miFormulario">
+            <fieldset>
+                <legend>datos personales</legend>
+                
+                    <label for="nombre">Nombre: </label>
+                    <input type="text" id="nombre" name="nombre">*
+                    <label for="primerApellido">Primer apellido: </label>
+                    <input type="text" id="primerApellido" name="primerApellido">*
+                    <label for="segundoApellido">Segundo apellido: </label>
+                    <input type="text" id="segundoApellido" name="segundoApellido">*
+
+                    <p>
+                        <label for="direccion">Dirección: </label>
+                        <input type="text" id="direccion" name="direccion" placeholder="calle o plaza, número y piso.">
+                    </p>
+
+                    <p>
+                        <label for="direccion">Teléfono: </label>
+                        <input type="text" id="telefono" name="telefono" placeholder="123 33 33 33">*
+                    </p>
+
+                    <p>
+                        <label for="email">E-mail: </label>
+                        <input type="email" id="email" name="email" placeholder="ejemplo@ejemplo.com">*
+                    </p>
+
+                    <p>
+                        <label for="contraseña">Contraseña: </label>
+                        <input type="text" id="contraseña" name="contraseña">*
+                    </p>
+
+                    <p>
+                        <label>Sexo:</label>
+                        <p>
+                            <label>
+                                <input type="radio" name="sexo" value="Varón"> Varón
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="radio" name="sexo" value="Mujer"> Mujer
+                            </label>
+                        </p>
+                        
+                    </p>
+                
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Nivel de estudios e intereses</legend>
+                <br>
+                <label>Nivel de estudios:</label>
+                    <br>
+                    <label>
+                        <input type="radio" name="estudios" value="certificadoEscolar"> Certificado escolar
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" name="estudios" value="ESO"> Graduado en E.S.O
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" name="estudios" value="bachiller"> Bachiller - Formación Profesional
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" name="estudios" value="diplomado"> Diplomado
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" name="estudios" value="licenciadoDoctorado"> Licenciado o Doctorado
+                    </label>
+                <br><br>
+                <label>Recibir artículos sobre los siguientes temas:</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" name="intereses" value="musica"> Música
+                    </label>
+                    <br>
+                    <label>
+                        <input type="checkbox" name="intereses" value="deportes"> Deportes
+                    </label>
+                    <br>
+                    <label>
+                        <input type="checkbox" name="intereses" value="cine"> Cine
+                    </label>
+                    <br>
+                    <label>
+                        <input type="checkbox" name="intereses" value="libros"> Libros
+                    </label>
+                    <br>
+                    <label>
+                        <input type="checkbox" name="intereses" value="ciencia"> Ciencia
+                    </label>
+                        
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Datos sobre la revista</legend>
+                <p>
+                    <label for="frecuencia">Frecuencia con la que se recibirá la revista:</label>
+                    <select id="frecuencia" name="frecuencia" required>
+                        <option value="semanal">semanal</option>
+                        <option value="semanal">mensual</option>
+                        <option value="semanal">bimensual</option>
+                    </select>
+                </p>
+                <p>
+                    Puedes mandar tu artículo sobre cualquier tema de los que tratamos. Nosotros lo valoraremos para que pueda ser publicado.
+                </p>
+
+                <p>
+                    <label for="archivo">Mandar artículo: </label>
+                    <input type="file" id="archivo" name="archivo" placeholder="Seleccionar archivo">
+                </p>
+
+                <p>
+                    <label for="comentario">Si deseas mandar simplemente una opinión o comentario escríbelo aquí:</label> <br>
+                    <textarea name="comentario" id="comentario" rows="6" cols="70" placeholder="Escribe tu comentario..."></textarea>
+                </p>
+                
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Comenzar de nuevo</legend>
+                    <p>
+                        <label for="borrar">Borrar todos los datos del formulario y volver a empezar:</label> <br>
+                        <button type="reset" id="borrar">Borrar Todo</button>
+                    </p>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>enviar</legend>
+                    <p>
+                        <label for="borrar">Envíar formulario por correo electrónico: Al pulsar en el botón se abrirá la página de envío de correo: en esa página pulsa en enviar:</label> <br>
+                        <button type="submit" id="enviar">Enviar por Correo</button>
+                    </p>
+            </fieldset>
+
+        </form>
+    <script src="ejercicio_formulario.js"></script>
+</body>
+</html>
