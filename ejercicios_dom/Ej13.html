@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ej13</title>
+</head>      
+<body>
+    <h2>Checkbox con Números Aleatorios</h2>
+    <div id="contenedor">
+    </div>
+    <p>
+        <input type="button" onclick="marcarTodos()" value="Marcar todos" id="marcarTodos" />
+        <input type="button" onclick="desmarcarTodos()" value="Desmarcar todos" id="desmarcarTodos" />
+    </p>
+
+    <script>
+        // Función para crear 100 checkboxs con números aleatorios
+        function crearCheckboxs() {
+            let contenedor = document.getElementById("contenedor");
+
+            for (let i = 0; i < 100; i++) {
+                // Creamos un checkbox
+                let checkbox = document.createElement("input");
+                checkbox.type = "checkbox";
+
+                // Creamos un número aleatorio
+                let numeroAleatorio = Math.floor(Math.random() * 1000);
+                checkbox.value = numeroAleatorio;
+
+                // Creamos un label para mostrar el número
+                let label = document.createElement("label");
+                label.textContent = " " + numeroAleatorio;
+                
+                // Agregamos el checkbox y el label al contenedor
+                contenedor.appendChild(checkbox);
+                contenedor.appendChild(label);
+
+                // Saltamos a una nueva línea después de cada checkbox
+                contenedor.appendChild(document.createElement("br"));
+            }
+        }
+
+        // Función para marcar todos los checkboxs
+        function marcarTodos() {
+            let checkboxes = document.querySelectorAll("#contenedor input[type='checkbox']");
+            for (let i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].checked = true;
+            }
+        }
+
+        // Función para desmarcar todos los checkboxs
+        function desmarcarTodos() {
+            let checkboxes = document.querySelectorAll("#contenedor input[type='checkbox']");
+            for (let i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].checked = false;
+            }
+        }
+
+        // Llamamos a la función para crear los checkboxes al cargar la página
+        crearCheckboxs();
+    </script>
+</body>
+</html>

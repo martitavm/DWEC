@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej 10</title>
+</head>
+<body>
+    <h1>Validación de Correo y Sitio Web</h1>
+    <form action="#" method="post" id="formulario">
+        <label for="email">Ingrese email:</label>
+        <input type="text" id="email">
+        <span id="resultado1"></span>
+        <br><br>
+        <label for="url">Ingrese sitio web:</label>
+        <input type="text" id="url">
+        <span id="resultado2"></span>
+        <br><br>
+        <button type="button" onclick="validarFormulario()">Validar</button>
+    </form>
+
+    <script>
+        function validarFormulario() {
+            const email = document.getElementById('email');
+            const url = document.getElementById('url');
+            const resultado1 = document.getElementById('resultado1');
+            const resultado2 = document.getElementById('resultado2');
+
+            const expresionCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const expresionSitioWeb = /^(https?:\/\/)?(www\.)?[a-z0-9-]+(\.[a-z]{2,})+$/i;
+
+            // Validar correo
+            if (expresionCorreo.test(email.value)) {
+                resultado1.textContent = "Correcto";
+            } else {
+                resultado1.textContent = "Incorrecto";
+            }
+
+            // Validar sitio web
+            if (expresionSitioWeb.test(url.value)) {
+                resultado2.textContent = "Correcto";
+            } else {
+                resultado2.textContent = "Incorrecto";
+            }
+        }
+    </script>
+</body>
+</html>
+

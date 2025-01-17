@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ej11</title>
+</head>      
+<body>
+    <h2>Lista números aleatorios</h2>
+    <ul id="lista">
+
+    </ul>
+    <p>
+        <input type="button" onclick="anadirElementoLista()" value="Nuevo número" id="nuevoNumero" />
+    </p>
+
+    <script>
+        function anadirElementoLista() {
+            let listaElementos = document.getElementById("lista");
+            let elementoNuevoLista = document.createElement("li");
+            let numeroAleatorio = Math.floor(Math.random() *1000);
+            elementoNuevoLista.textContent = numeroAleatorio;
+            listaElementos.append(elementoNuevoLista);
+        };
+
+    </script>
+</body>
+</html>

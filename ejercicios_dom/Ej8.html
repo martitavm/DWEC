@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ej8</title>
+</head>      
+<body>
+    <p>
+        <label for="valor1">Ingrese primer valor:</label>
+        <input type="number" id="valor1" />
+    </p>
+    <p>
+        <label for="valor2">Ingrese segundo valor:</label>
+        <input type="number" id="valor2" />
+    </p>
+    <p>
+        <select id="operacion">
+            <option value="suma">Sumar</option>
+            <option value="resta">Restar</option>
+        </select>
+    </p>
+    <p>
+        <input type="button" onclick="operaciones()" value="Operar" id="calculo" />
+    </p>
+    <p id="resultado1"></p>
+    <select multiple="multiple" id="operaciones">
+        <option value="suma">Sumar</option>
+        <option value="resta">Restar</option>
+    </select>
+    <p>
+        <input type="button" onclick="operacionesMultiples()" value="Operar" id="calculomultiple" />
+    </p>
+    <p id="resultado2"></p>
+
+    <script>
+  
+        function operaciones () {
+            let valor1 = Number(document.getElementById("valor1").value);
+            let valor2 = Number(document.getElementById("valor2").value);
+            let operacion = document.getElementById("operacion").value;
+            let resultado = "";
+
+            if (operacion == "suma") {
+                resultado = `La suma es ${valor1 + valor2}`;
+            } else if (operacion == "resta") {
+                resultado = `La diferencia es ${valor1 - valor2}`;
+            }
+
+            document.getElementById("resultado1").textContent = resultado;
+        };
+
+       
+       function operacionesMultiples() {
+            let valor1 = Number(document.getElementById("valor1").value);
+            let valor2 = Number(document.getElementById("valor2").value);
+            let operaciones = document.getElementById("operaciones");
+            let resultado = "";
+
+            for (let opcion of operaciones.options) {
+                if (opcion.selected) {
+                    if (opcion.value == "suma") {
+                        resultado += `La suma es ${valor1 + valor2}. `;
+                    } else if (opcion.value == "resta") {
+                        resultado += `- La diferencia es ${valor1 - valor2}. `;
+                    }
+                }
+            }
+
+            document.getElementById("resultado2").textContent = resultado;
+        };
+    </script>
+</body>
+</html>

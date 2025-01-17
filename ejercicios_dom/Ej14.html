@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej14</title>
+</head>
+
+<body>
+
+    <p onclick="ocultar()" ondblclick="eliminar()">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui inventore, labore commodi delectus minus iure
+        voluptate sed repudiandae corporis iste distinctio. Voluptates itaque pariatur ipsa doloremque nisi eligendi
+        recusandae nihil.</p>
+    <p onclick="ocultar()" ondblclick="eliminar()">Veniam, ratione ut. Nulla error quia autem ea quae enim deserunt dolore voluptate, sed architecto, adipisci
+        accusamus laborum eveniet cumque ducimus officiis voluptatibus facere nostrum cupiditate numquam sequi ad sint.
+    </p>
+    <p onclick="ocultar()" ondblclick="eliminar()">Hic velit repellendus iure maiores sapiente nulla quisquam accusantium quaerat ab facere id ipsam obcaecati
+        placeat numquam quae nesciunt fugit soluta aliquam repudiandae porro, dolorem similique eius saepe. Sed, hic.
+    </p>
+
+        <input type="button" onclick="reaparecer()" value="Reaparecer" id="reaparecer" />
+
+    <script>
+        function ocultar(){
+            event.target.style.display = "none";
+        }
+
+        function eliminar(){
+            event.target.remove();
+        }
+
+        function reaparecer() {
+            let parrafos = document.getElementsByTagName("p");
+            for(let i = 0; i<parrafos.length; i++){
+                parrafos[i].style.display = "";
+            }
+
+        };
+
+        reaparecer();
+
+
+    </script>
+</body>
+
+</html>

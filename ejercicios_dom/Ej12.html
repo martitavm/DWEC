@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ej12</title>
+</head>      
+<body>
+    <h2>Tabla de Números Casi Primos</h2>
+    <table id="tabla" border="1" cellspacing="0" cellpadding="5">
+    </table>
+    <p>
+        <input type="button" onclick="calcularCasiPrimos()" value="Calcular número casi primos" id="nuevoNumero" />
+    </p>
+
+    <script>
+        // Creamos la tabla de 100x100 con números consecutivos
+        function crearTabla() {
+            let tabla = document.getElementById("tabla");
+            let num = 1;
+
+            for (let i = 0; i < 100; i++) {
+                let fila = document.createElement("tr");
+
+                for (let j = 0; j < 100; j++) {
+                    let celda = document.createElement("td");
+                    celda.textContent = num;
+                    fila.appendChild(celda);
+                    num++;
+                }
+
+                tabla.appendChild(fila);
+            }
+        }
+
+        // Calculamos y subrayamos los números casi primos
+        function calcularCasiPrimos() {
+            let tabla = document.getElementById("tabla");
+            let filas = tabla.getElementsByTagName("tr");
+
+            for (let i = 0; i < filas.length; i++) {
+                let celdas = filas[i].getElementsByTagName("td");
+
+                for (let j = 0; j < celdas.length; j++) {
+                    let numero = parseInt(celdas[j].textContent);
+
+                    if (esCasiPrimo(numero)) {
+                        celdas[j].style.backgroundColor = "yellow";
+                    }
+                }
+            }
+        }
+
+        // Verificar si un número es casi primo
+        function esCasiPrimo(numero) {
+            let divisores = 0;
+
+            for (let i = 1; i <= numero; i++) {
+                if (numero % i === 0) {
+                    divisores++;
+                }
+            }
+
+            return divisores === 3; // Solo divisible por 1, sí mismo y un número adicional
+        }
+
+        // Llamamos a la función para generar la tabla al cargar la página
+        crearTabla();
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej 16</title>
+    <script type="text/javascript">
+        function genera() {
+            // Generamos números aleatorios
+            let numero1 = Math.floor(Math.random() * 100) + 1;
+            let numero2 = Math.floor(Math.random() * 100) + 1;
+    
+            // Creamos párrafos con los números
+            let p1 = document.createElement("p");
+            let p2 = document.createElement("p");
+    
+            let texto1 = document.createTextNode(numero1);
+            let texto2 = document.createTextNode(numero2);
+    
+            p1.appendChild(texto1);
+            p2.appendChild(texto2);
+    
+            // Insertamos los párrafos en las cajas correspondientes
+            let caja1 = document.getElementById("primero");
+            let caja2 = document.getElementById("segundo");
+    
+            // Limpiamos las cajas antes de agregar nuevos números
+            caja1.innerHTML = "";
+            caja2.innerHTML = "";
+    
+            caja1.appendChild(p1);
+            caja2.appendChild(p2);
+        }
+    
+        function compara() {
+            let caja1 = document.getElementById("primero");
+            let caja2 = document.getElementById("segundo");
+            let resultado = document.getElementById("resultado");
+    
+            // Obtenemos los números de las cajas
+            let numero1 = parseInt(caja1.textContent);
+            let numero2 = parseInt(caja2.textContent);
+    
+            // Determinamos el mayor número
+            let mayorNumero;
+            if (numero1 > numero2) {
+                mayorNumero = numero1;
+            } else {
+                mayorNumero = numero2;
+            }
+    
+            // Creamos un nuevo párrafo con el número mayor
+            let pResultado = document.createElement("p");
+            let textoResultado = document.createTextNode(mayorNumero);
+            pResultado.appendChild(textoResultado);
+    
+            // Insertamos el párrafo en la caja de resultados
+            resultado.innerHTML = "";
+            resultado.appendChild(pResultado);
+        }
+    </script>
+    
+    <style type="text/css">
+        #primero, #segundo, #resultado {width: 150px; height: 150px; border: thin solid silver; background: #F5F5F5; float: left; margin:20px; font-size: 6em; color: #333; text-align: center; padding: 5px; font-family:Arial, Helvetica, sans-serif;}
+        #primero p, #segundo p, #resultado p {margin:.2em 0;}
+        #resultado {margin-left:1.3em; border-color: black;}
+        .clear {clear:both;}
+        #compara {margin-left:11em;}
+        #genera {font-size:1.2em; margin-left:8em;}
+    </style>
+</head>   
+<body>
+        <input id="genera" type="button" value="¡¡ Genera !!" onclick="genera()" />
+        
+        <div id="primero"></div>
+        
+        <div id="segundo"></div>
+        
+        <div class="clear"></div>
+        
+        <input id="compara" type="button" value="<< Comparar >>" onclick="compara()" />
+        
+        <div id="resultado"></div>
+</body>
+</html>
